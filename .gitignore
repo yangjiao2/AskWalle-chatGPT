@@ -2,7 +2,7 @@
 .DS_STORE
 
 # Source documents
-source_documents/
+# source_documents/
 
 # Models
 models/

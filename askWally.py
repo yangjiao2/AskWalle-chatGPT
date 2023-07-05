@@ -5,6 +5,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.vectorstores import Chroma
 from langchain.llms import GPT4All, LlamaCpp
+from langchain import PromptTemplate
 import os
 import argparse
 import time
@@ -21,6 +22,18 @@ model_n_batch = int(os.environ.get('MODEL_N_BATCH',8))
 target_source_chunks = int(os.environ.get('TARGET_SOURCE_CHUNKS',4))
 
 from constants import CHROMA_SETTINGS
+
+# Prompt template definition
+template = """
+Use the following Evidence section and only that Evidence to answer the question at the end. Do not use your internal knowledge.
+If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+Evidence:
+{context}
+
+Question:
+{question}
+"""
 
 def main():
     # Parse the command line arguments
@@ -40,7 +53,12 @@ def main():
             # raise exception if model_type is not supported
             raise Exception(f"Model type {model_type} is not supported. Please choose one of the following: LlamaCpp, GPT4All")
         
-    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents= not args.hide_source)
+    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents= not args.hide_source, chain_type_kwargs= {
+        "prompt": PromptTemplate(
+            template=template,
+            input_variables=["context", "question"]
+        )
+    })
     # Interactive questions and answers
     while True:
         query = input("\nEnter a query: ")
@@ -67,7 +85,7 @@ def main():
             print(document.page_content)
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='privateGPT: Ask questions to your documents without an internet connection, '
+    parser = argparse.ArgumentParser(description='askWally: Ask questions to Walmart Documentation without an internet connection, '
                                                  'using the power of LLMs.')
     parser.add_argument("--hide-source", "-S", action='store_true',
                         help='Use this flag to disable printing of source documents used for answers.')

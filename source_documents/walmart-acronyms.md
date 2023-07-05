@@ -1,0 +1,102 @@
+---
+tags: documentation date/2023-05-26 tickets/[TICKET-NUMBER]
+---
+
+# **Walmart Terms & Acronyms**
+**Purpose:** This document contains a table of various acronyms and terms along with their meanings in the context of their use inside the Walmart organization. Each line is self contained and independent. Each line is not related to information on other lines.
+
+# \#
+- ACRONYM: 1:1, MEANING: "1:1" is short-hand for "One on One". A 1:1 is a regular meeting for an Associate and his/her manager, to discuss the Associate's goals and interests, and to get/give feedback and advice.
+- TERM: 10-Foot Rule, MEANING: The "10-Foot Rule" is a Walmart policy that any Associate coming within ten feet of a customer should look that customer in the eye and say "hello".
+- ACRONYM: 1HG, MEANING: "1HG" is an acronym for "1 Hour Guarantee", which is a Walmart fulfillment program.
+- ACRONYM: 1P, MEANING: "1P" is an acronym for "1st Party". This can refer to internal teams. It can also be short for "1st Party items" which would reference items that Walmart owns directly.
+- TERM: 24-7 In Touch, MEANING: "24-7 In Touch" is a call center vendor for Walmart. Their website is: https://www.intouchcx.com.
+- TERM: 2x2, MEANING: "2x2" is a GeC initiative (starting in 2014) to deliver items in 2 days, and to build this out within 2 years.
+- ACRONYM: 2P, MEANING: "2P" is an acronym for "2nd Party". This can refer to Drop Ship Vendor (DSV) items (inventory owned by Walmart, fulfilled directly by the vendor). This is applicable to Walmart Canada.
+- ACRONYM: 3LA, MEANING: "3LA" is short for "3-Letter Acronym" (e.g. GTP = Global Tech Platform).
+- ACRONYM: 3P, MEANING: "3P" means "3rd-Party" Vendors or Vendor Teams, or "3rd-Party" Items, Marketplace items, or Marketplace.
+- ACRONYM: 3PL, MEANING: "3PL" means "Third-Party Logistics", which is one of our shipping strategies where we use several shipping companies as distribution warehouses.
+- TERM: 3 Basic Beliefs, MEANING: The 3 Basic Beliefs that Sam Walton established in 1962 are: \n1. Respect for the Individual, \n2. Service to Our Customers, \n3. Strive for Excellence. \n\nMr. Walton built Walmart on the philosophies of excellence in the workplace, customer service, and always having the lowest prices.
+- TERM: 3-Column, MEANING: 3-Column is a page template which includes the left nav, a center column, and a narrow right column. "All-Major" pages do not display a left nav or a right column. Also see "Left-Major", "Right-Major", and "All-Major".
+- ACRONYM: 3PW, MEANING: "3PW" is short for "Third-Party Warehouse".
+- ACRONYM: 4ITB, MEANING: "4ITB" stands for "Four in the Box", which is the Walmart Product ways of working including Product, Engineering, Business and Design.
+- ACRONYM: 4LA, MEANING: "4LA" means "4-Letter Acronym" (e.g. PSDO = Platforms Services Delivery & Operations).
+
+# A
+- ACRONYM: ABO, MEANING: "ABO" is an acronym for "Algorithmic Business Optimization".
+- ACRONYM: AAB, MEANING: "AAB" means "All Agency Briefing".
+- ACRONYM: AAP, MEANING: "AAP" is an acronym for "Advance Auto Parts" (Walmart partners, for pickup).
+- ACRONYM: AC, MEANING: "AC" stands for "Acceptance Criteria".
+- ACRONYM: ACNT, MEANING: "ACNT" means "Associates in Critical Need Trust".
+- ACRONYM: ACB, MEANING: "ACB" is an acronym for "Active Customer Base", which is the total number of customers who have shopped in the last 13 weeks.
+- ACRONYM: ACH, MEANING: "ACH" means "Automated Clearing House", which are payments processed with checking information (Routing Number - Account Number) without using physical checks.
+- ACRONYM: ACC, MEANING: "ACC" is an acronym for "Auto Care Center" or "Automated Consolidation Center".
+- ACRONYM: ACD, MEANING: "ACD" stands for "Automatic Call Distributor".
+- TERM: Accertify, MEANING: Accertify is a Case Management Tool used by the Fraud Specialist Team.
+- TERM: Acculynk, MEANING: Acculynk is an EBT with PIN based payment vendor.
+- TERM: Activation, MEANING: Activation is the event that funds a gift card and makes it redeemable. For small orders, cards are activated soon after fulfillment. For larger orders (>24 cards or ≥$250), the customer has to take action on an email they receive from us to activate the cards once they are received.
+- ACRONYM: AD, MEANING: "AD" stands for "Active Directory".
+- ACRONYM: ADA, MEANING: "ADA" means "Americans with Disabilities Act"
+- TERM: Adhoc, MEANING: Adhoc is a term used for a project that runs for 5 days or less with only 1 team involved.
+- ACRONYM: ADD, MEANING: "ADD" is an acronym for Availability, Duration, Defects. These are metrics used to track the health of Walmart registers.
+- ACRONYM: ADE, MEANING: "ADE" stands for "Associate Digital Experience", which is a Walmart Tech Support Team for Associates.
+- ACRONYM: ADR, MEANING: "ADR" is an acronym for "Architecture Decision Record".
+- ACRONYM: AE, MEANING: "AE" is an acronym for "Annual Event".
+- ACRONYM: AES, MEANING: "AES" means "Associate Engagement Survey".
+- TERM: Aggregators, MEANING: "Aggregators" refer to middle men in the video content industry that work between the studios and content providers like VUDU or Netflix. It can also be used for middle men in the Marketplace which work between a suite of small sellers and Walmart.
+- TERM: AHA, MEANING: "Aha" is a software tool used for creating and maintaining product roadmaps.
+- ACRONYM: AHT, MEANING: "AHT" is an acronym for "Average Handling Time", a call center term.
+- ACRONYM: AIDR, MEANING: "AIDR" is an acronym for "Artificial Intelligence based Incident Detection & Response". For more information, reach out to Ramesh (@vn53hvc on Slack).
+- ACRONYM: AIE, MEANING: "AIE" means "Automated Item Eligibility".
+- ACRONYM: AKS, MEANING: "AKS" stands for "Azure Kubernetes Service".
+- ACRONYM: AML, MEANING: "AML" is an acronym for "Anti Money Laundering".
+- ACRONYM: AMS, MEANING: "AMS" means "Address Management System".
+- TERM: Ansible, MEANING: Ansible is an open-source  orchestration engine that automates software provisioning, configuration management, and application deployment. It stresses reliability with minimal overhead ('modules' are scripted, conducted via ssh, then delete themselves from hosts after operation is complete).
+- ACRONYM: AOP, MEANING: "AOP" is an acronym for "Annual Operating Plan". Relate to Long Range Planning (LRP).
+- ACRONYM: AOS, MEANING: "AOS" means "Average Order Size" or "Associate Opinion Survey".
+- ACRONYM: AOV, MEANING: "AOV" stands for "Average Order Value".
+- TERM: A's & O's, MEANING: May also be seen as "As & Os". "A's & O's" means "Achievements and Objectives", also known as “Quarterly A’s and O’s." These are the quarterly objectives or goals each Associate sets for themselves and the achievements as compared to those objectives.
+- TERM: APAC, MEANING: "APAC" refers to a Call Center Vendor for Walmart.
+- ACRONYM: API, MEANING: "API" is an acronym for "Application Programming Interface". An API is an interface implemented by a software program that enables it to interact with other software. It facilitates interaction between different software programs similar to the way the user interface facilitates interaction between humans and computers. An API is implemented by applications, libraries, and operating systems to determine their vocabularies and calling conventions, and is used to access their services. It may include specifications for routines, data structures, object classes, and protocols used to communicate between the consumer and the implementer of the API.
+- ACRONYM: APIC, MEANING: "APIC" is an acronym for "API Connect".
+- ACRONYM: APL, MEANING: "APL" stands for "Alternate Pickup Locations".
+- ACRONYM: APM, MEANING: "APM" has a few different meanings depending on context. It can mean "Agile Project Manager", "Application Performance Management", or "Application Portfolio Management".
+- ACRONYM: AQM, MEANING: "AQM" is an acronym for "Advanced Query Module". This is a new module being added, and it will provide relevancy in key words and decrease the time in which key words are returned.
+- ACRONYM: ARG, MEANING: "ARG" stands for "Associate Resource Group".
+- ACRONYM: ARPU, MEANING: "ARPU" is an acronym for "Average Revenue Per User".
+- ACRONYM: ASA, MEANING: "ASA" means "Average speed of Answer", a call center term.
+- TERM: ASC, MEANING: "ASC" is a web-based knowledge base tool, which is used by an agent to look up additional information that is communicated by the Tier 3 Customer Operations team.
+- ACRONYM: ASD, MEANING: "ASD" means "Actual Ship Date".
+- TERM: ASDA, MEANING: "ASDA" is Walmart's UK subsidiary. Comprised of "George" (ASDA's apparel line) and "ASDA Groceries". (The ASDA GM site has been discontinued, several sub-sections of GM will be merged into George).
+- ACRONYM: ASE, MEANING: "ASE" is an acronym for "APP Service Environment".
+- ACRONYM: ASK, MEANING: "ASK" is an acronym for "Agent System Knowledgebase", a knowledge management tool used by call centers.
+- ACRONYM: ASN, MEANING: "ASN" means "Advanced Ship Notification #".
+- TERM: Aspera, MEANING: Aspera is a partner for Vudu that provides Vudu server space.
+- TERM: Assembly, MEANING: "Assembly" refers to a collection of VMs for a particular service.
+- TERM: Assortment, MEANING: An "Assortment" is defined as more than one item with different UPC codes grouped together for shipping and/or ordering purposes. Assortments are used when several different UPC codes are grouped/shipped together in one box. It provides a way of ordering or shipping the right combination and quantities of merchandise to the stores.
+- TERM: Assortment Planner, MEANING: The "Assortment Planner" sheet is like a buyer’s bible and is manually controlled by the buyer to keep track of all his items. Typically includes additional assortment details like sales for a period, demand forecast, availability etc. This is customizable/editable.The assortment planner sheet has 3 action buttons - get data, calculate data and get new items. It has to be manually updated by the buyer. This sheet has data for 52 weeks and can be personalized for each buyer. There is a similar Assortment Planner sheet available for each planner.
+- TERM: Assortment Selector, MEANING: The "Assortment Selector" (also called Guide) receives the Perceive response from Polaris, and returns a response to Polaris specifying which filters to apply for the primary and additional recall sets. Guide checks for Odyssey overrides by calling the Odyssey CouchBase DB (regardless of the Perceive response).
+- ACRONYM: ASP, MEANING: "ASP" is an acronym for "Action Server Page", an archaic Microsoft technology for dynamically generated webpages.
+- TERM: Asurion, MEANING: Asurion is a third party with which Walmart has partnered with for providing product care plans.
+- TERM: Astro, MEANING: Astro is an automation-team that tests and validates complete order flow and lifecycle in Teflon.
+- ACRONYM: AATC, MEANING: "AATC" stands for "Add all to Cart", which adds multiple items to a user's shopping cart.
+- ACRONYM: ATC, MEANING: "ATC" means "Add to Cart", which is functionality that adds an item or grouping to a user's shopping cart.
+- ACRONYM: ATF, MEANING: "ATF" is an acronym for "Above The Fold".
+- TERM: ATG CSC, MEANING: ATG Commerce Service Center is a tool that allows Customer Service Agents to support the successful delivery of customer orders, and to address any issues that an online customer may raise. It has all details of the customer, order, payment etc. If a customer calls a contact center, this tool is used to retrieve all information regarding the customer, orders, to manage refunds etc. Used by Customer Service Agent and Store Managers within W2G.
+- TERM: ATG BCC, MEANING: ATG Business Control Center is a tool that allows the business users to create search capabilities for the grocery website and develop eVouchers, promotions and facets to increase customer orders. Used mainly by the marketing team within W2G.
+- TERM: Athena, MEANING: Athena is a third-party legacy reporting tool for personalization data.
+- ACRONYM: ATL, MEANING: "ATL" is an acronym for "Above the Line", or "Add to List", which is functionality that adds an item or grouping to one of the user's lists (wedding registry, save for later, etc).
+- TERM: Atlas, MEANING: Atlas is a personalization engine for Walmart.
+- ACRONYM: ATS, MEANING: "ATS" is an acronym for "Available to Sell".
+- ACRONYM: AUC, MEANING: "AUC" references Cost Sales/Unit Sales
+- ACRONYM: AUR, MEANING: "AUR" means "Average Unit Retail" calculated as Total Sales/Total Number of items.
+- TERM: Aurora, MEANING: Aurora is a new Search Indexing Pipeline. It can ingest items into Solr storage for dissemination to Polaris Search backend, which is referenced by search front end (electrode search/preso)
+- TERM: Autoinsurance, MEANING: Autoinsurance is a third party that manages and offers auto insurance products and services for Walmart.
+- ACRONYM: AVS, MEANING: "AVS" stands for "Account Verification Service", which is a new service introduced in Glass for verifying CVV.
+- TERM: A-V, MEANING: A-V is a reference to A-V Flows. "A" stands for "Adamantium" (Customer Purchase Flows), "V" stands for "Vibranium" (Fulfillment Flows).
+- ACRONYM: A/V, MEANING: "A/V" is an acronym for "Alternative View".
+- TERM: Avocado, MEANING: Avocado is a legacy customer service system tool used by Finance Ops, Return Centers, Fulfillment Centers, Site Ops, and Logistics. Originally designed for use by Customer Service Associates to; determine the status of an order, log comments, issue adjustments on items or orders, refund or replace a virtual return, update status (intent to cancel, S2S item picked up), and login spoof.
+- ACRONYM: ATOM, MEANING: "ATOM" is an acronym for "Automated Tools for Operations and Management" (vendor related sku information).
+- TERM: Algolia, MEANING: Algolia is a new search engine (SAS based). Used for indexing, experience mgmt., search. Replacement for SolR.
+- TERM: Apsalar, MEANING: Apsalar is an attribution tracking tool for apps. Can perform multiple analyses including LTV, uninstall rate, etc.
+- ACRONYM: AWI, MEANING: "AWI" stands for "Associate Work Instructions".
