@@ -86,7 +86,7 @@ class RoutableExample: CoordinatorRoutable<CoordinatorResult> {
 
 After a `Routable` subclass has been created, it can be registered as simply as adding an instance of it to the `routables` array of the `DeepLinkingPluginAPI` class.
 
-As part of documenting the supported deep links, newly added routes needs to be updated [here](supported-list.md) 
+As part of documenting the supported deep links, newly added routes needs to be updated [here](supported-list.md).
 
 ## Universal Links
 
@@ -265,7 +265,7 @@ The diagnostic messages for the deep links can be viewed in [this](https://ce-lo
 
 ## Documenting Deep Links
 
-Deep link URLs should be documented in the [Mobile Universal & Deep Linking documentation](https://confluence.walmart.com/pages/viewpage.action?pageId=355386619#GlassMobileAppUniversal&DeepLinking-WhatshouldbeGlassUniversalLinkorDeeplinkforafeature.).
+Deep link URLs should be documented in [the list of supported links](supported-list.md).
 
 ## More Information
 

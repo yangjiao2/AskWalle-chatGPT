@@ -49,12 +49,16 @@ E.g. feature.enabled (O), isFeatureEnabled (X)
 | `feature.cancellation.instantV2.enabled` | Indicates if Cancellation V2 is enabled. Defaults to `false`. | Boolean |
 | `feature.checkin.isArriveButtonEnabled` | Indicates if the "I've arrived" button is shown in the in-store pickup experience. | Boolean |
 | `feature.checkin.isBarcodeImageEnabled` | Indicates if the barcode image will be shown in the in-store pickup experience. | Boolean |
+| `feature.checkin.isItemBadgeEnabled` | Indicates if a quantity badge should be shown on item thumbnails.  Defaults to `false` | Boolean |
 | `feature.checkin.isLGPickupEnabled` | Indicates if Lawn & Garden pickup is enabled. | Boolean |
 | `feature.checkin.isManualArrivalEnabled` | Determines if the `arrived` service needs to be called when the `I have arrived` button is pressed in `In Store` and in the `I have parked` screen in Curbside flow. Defaults to false. | Boolean |
 | `feature.checkin.isMembershipBottomSheetEnabled` | Indicates if the Walmart+ acquisition bottom sheet is enabled. | Boolean | 
+| `feature.checkin.isOSStatusCodeEnabled` | Indicates if an Order Services status code check should be performed when requesting eligible orders. Defaults to false. | Boolean |
 | `feature.checkin.isPegasusApiProxyEnabled` | Indicates if the API proxy URL or the legacy URL should be used to reach Pegasus. | Boolean |
 | `feature.checkin.isPickUpInstructionsEnabled` | Determines whether to show a brief how to pickup description in pickup selector. Defaults to false. | Boolean |
 | `feature.checkin.isSummarizedInstructionsEnabled` | Indicates if Summarized Instructions on in-store pickup screen is enabled. | Boolean |
+| `feature.checkin.isUnifiedCheckInEnabled` | Indicates if the Unified CheckIn experience is enabled. Unified CheckIn allows the customer to simultaneously check-in for more than one pickup at the same store. | Boolean |
+| `feature.checkin.isVerticalIdEnabled` | Indicates if the header "WM_CONSUMER.VERTICAL_ID" needs to be send when the flag `isPegasusApiProxyEnabled` is true | Boolean |
 | `feature.checkin.isWplusMembershipTempoBannerEnabled` | Indicates if the Walmart+ acquisition banner is shown on the parking confirmation screen. | Boolean |
 | `feature.purchaseHistory.checkin.enabled` | Determines whether all Checkin action button can be displayed on the `PurchaseHistory` order detail screen. Defaults to `true`. | Boolean |
 | `feature.purchaseHistory.itemsReviewModule.enabled` | Determines if "items review" module is enabled. Defaults to `false`. | Boolean |
@@ -67,6 +71,7 @@ E.g. feature.enabled (O), isFeatureEnabled (X)
 | `feature.purchaseHistory.reorderEssentials.enabled` | Determines whether a "Reorder your essentials" action button can be displayed on the `PurchaseHistory` screen. Defaults to `true`. | Boolean |
 | `feature.purchaseHistory.showSearchFilters.enabled` | Determines whether the pre-defined search filters can be displayed on the `PurchaseHistory` screen. Defaults to `false`. | Boolean |
 | `feature.purchaseHistory.showStartReturn.enabled` | Determines whether a "Start a return" action button can be displayed on the `PurchaseHistory` screen. Defaults to `true`. | Boolean |
+| `feature.purchaseHistory.appeasement.enabled` | Indicates if W+ members will see a banner in PH & ODP for orders which were cancelled by Walmart. Defaults to `false`. | Boolean |
 | `feature.scanner.global.enabled` | Determines whether global scanner is enabled. Defaults to `false`. | Boolean |
 | `feature.scanner.global.outOfStoreMessaging.enabled` | Determines whether the out of store onboarding bottom sheet is displayed. Defaults to `true`. | Boolean |
 | `feature.scanner.global.inStoreMessaging.enabled` | Determines whether the in-store onboarding bottom sheet is displayed. Defaults to `true`. | Boolean |
@@ -110,6 +115,7 @@ E.g. feature.enabled (O), isFeatureEnabled (X)
 | `item.urlForCache.enabled` | Determines whether to enable Torbit caching on the ItemPage product details request. Defaults to true. | Boolean |
 | `item.buyBoxSuppression.enabled` | Determines whether to hide buybox related info on item page. Defaults to false. | Boolean |
 | `item.walmartCoFunding.enabled` | Determines whether to show walmart coFunding info on item page. Defaults to false. | Boolean |
+| `item.walmartPickDisclosure.enabled` | Determines whether to disclose Walmart Pick disclaimer legal text. Defaults to false. | Boolean |
 | `item.warningMessage.enabled` | Determines whether to show a warning message on ItemPage when user comes through deeplink. Defaults to false. | Boolean |
 | `item.wirelessPrepaid.enabled` | Controls the visibility of prepaid wireless module on Item page. Defaults to false. | Boolean |
 | `item.writeAReview.enabled` | Controls the visibility of write a review module on Item page. Defaults to false. | Boolean |
@@ -118,6 +124,7 @@ E.g. feature.enabled (O), isFeatureEnabled (X)
 | `onboarding.demoModeEnabled` | Determines whether to show demostores to user. Defaults to false. | Boolean |
 | `marketplace.cart.isAddressButtonRelocatedEnabled` | Indicates if Add/Edit Address Button in Cart is moved to the title in a hyperlink to make space for marketplace shipping options button. | Boolean |
 | `marketplace.isContactSellerEnabled` | Indicates if views using Marketplace contact seller methods are enabled. | Boolean |
+| `feature.proseller.visibilityType` | Indicates which version of ProSeller badge will be displayed. | String |
 | `marketplace.isEnabled` | Indicates if ItemDetails shows certain Marketplace details and if a special header is added to Marketplace-related network requests. | Boolean |
 | `marketplace.isWriteAReviewEnabled` | Indicates if write a review is enabled for Marketplace sellers and products in Item Details and Order Details. | Boolean |
 | `onboarding.idfa.messagingImageName` | IDFA message placeholder image name. Default "OnboardingIDFA"(other option is "OnboardingIDFANew") | String |
@@ -133,7 +140,6 @@ E.g. feature.enabled (O), isFeatureEnabled (X)
 | `orderDetails.showStartReturnOnTop.enabled` | Determines placement of "Start a return" button on the `OrderDetails` screen. Placement will be at top if `true`. Placement will be near bottom if `false`. Defaults to `false`. | Boolean |
 | `orderDetails.substitutionsToReshopFlow.enabled` | Determines whether the transition from Substitutions to Reshop experience happens from the `OrderDetails` screen. Defaults to `false`. | Boolean |
 | `orderDetails.wPlusRewardsBanner.enabled` | In CheckIn plugin, indicates if the customer should see the Cashback experience on the Walmart+ acquisition banner. In PurchaseHistory plugin, indicates if Walmart+ rewards banners are shown on Order Details Page. Defaults to `false`. | Boolean |
-| `paymentTransaction.klarna.enabled` | Enable Buy Now Pay Later (BNPL) payment method, Klarna.  Added for Canada.  Defaults to `false`. | Boolean |
 | `platform.app.nudgeUpdate.model.waitDurations` | Upgrade nudge model redisplay time duration, ex: "0,24,168" in hours. | String |
 | `platform.app.nudgeUpdate.enabled` | Determines whether to show Upgrade nudge to user. Defaults to false. | Boolean |
 | `platform.app.nudgeUpdate.reminderModel.waitDurations` | Upgrade nudge reminder model redisplay time duration, ex: "336" in hours. | String |
@@ -199,9 +205,18 @@ E.g. feature.enabled (O), isFeatureEnabled (X)
 | `platform.background.refresh.scheduler.enabled` | Determines whether to enable a background refresh for a task when app goes in background. Defaults to `false`. | Boolean |
 | `platform.background.refresh.scheduler.time` | The earliest time at which to run the task in background refresh. Defaults to 180(3 mins). | Double |
 | `item.acc.phase2.enabled` | Determines whether to enable ACC phase 2 or not on item page or PDP. Defaults to `false`. | Boolean |
+| `item.acc.nearByStore.enabled` | Determines whether to enable ACC nearby or not on item page or PDP. Defaults to `false`. | Boolean |
 | `feature.purchaseHistory.convertToPickUp.enabled` | Determines delayed order CTAs should be shown or not in Purchase history and Pickup instead button should be shown or not in order detail page. Defaults to `false`. | Boolean |
 | `item.showShopSimilarOnFulfillment.enabled` | Determines whether to enable shopSimilar button in BuyBox fulfillment in item page. Defaults to `false`. | Boolean |
 | `platform.networking.remoteImageAccept.enabled` | Determines whether the custom image header accept should be enabled. Defaults to `false`. | Boolean |
 | `feature.convertToPickup.enabled` | Determines delayed order CTAs should be shown or not in Purchase history and Pickup instead button should be shown or not in order detail page. Defaults to `false`. | Boolean |
 | `feature.lostInTransit.enabled` | Determines lostInTransit info on FC, LOT and ODP. Defaults to `false`. | Boolean |
 | `account.referAFriend.isEnabled` | Determines whether the Refer a Friend option should be enabled on Account page. Defaults to `false`. | Boolean |
+| `search.feature.instoreFilterCoachmark.enabled` | Determines whether or not to show a coachmark for In Store pill filter on Search Results Screen. Defaults to `false`. | Boolean |
+| `feature.orderDetails.petFood.enabled` | Determines whether the pet food should be enabled or not in purchase history and order detail page. Defaults to `false`. | Boolean |
+| `item.buyNowPayLater.enabled` | Determines whether Buy Now Pay Later experience will be enabled in PDP page. Defaults to `false`. | Boolean |
+| `itemDetails.salesFinancing.rewards.installments.enabled` | Determines whether Sales Financing experience will be enabled in PDP page. if `item.buyNowPayLater.enabled` is enabled, then Sales Financing experince will be replaced with Buy Now Pay Later experience in PDP page. Defaults to `false`. | Boolean |
+| `walmart_ca.configuration.feedback.browser.isEnabled` | Determines whether Feedback experience in browser for Canada market is enabled. Defaults to `false`. | Boolean |
+| `walmart_ca.configuration.feedback.browser.english.url` | Specifies the Feedback URL that is going to be used for the Feedback in browser experience for en-CA locale. | String |
+| `walmart_ca.configuration.feedback.browser.french.url` | Specifies the Feedback URL that is going to be used for the Feedback in browser experience for fr-CA locale. | String |
+| `orderDetails.paymentLedger.enabled` | Determines whether the paymnet ledger should be enabled or not in order detail page. Defaults to `false`. | Boolean |

@@ -4,7 +4,7 @@ This is a decision record for choices we've made along our journey. The goal her
 
 This is based on the work of [Michael Nygard](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html) and the ADR process in the [Walmart Engineering Community](https://engineering.walmart.com/adrs).
 
-# Log
+## Log
 
 - [Architecture Design Pattern (MVVM+C)](architecture-design-pattern.md) - Determine a design pattern for writing highly testable code
 - [Mobile Platform](https://confluence.walmart.com/display/GPONEW/Walmart+Mobile+Platform) - Determine the mobile architecture for the unified Walmart mobile application experience
@@ -15,3 +15,5 @@ This is based on the work of [Michael Nygard](https://cognitect.com/blog/2011/11
 - [Platform Code Organization](platform-code-organization.md) - Determine how and where Platform capabilities should live.
 - [Google Ad Manager SDK integration](google-ad-manager-display-ad-integration.md) - Defines solution of Display Ad for international market via Google Ad Manager
 - [User Idle State Notifying](user-idle-state-notifying.md) - How should plugins be notified that the user has gone idle while using the app.
+- [Refer a Friend Integration](refer-a-friend.md) - Defines solution to display Refer a Friend feature on Account Page
+- [Automated PageView Analytics](automated-page-view-analtyics.md) - Design of automated `pageView` analytics API.

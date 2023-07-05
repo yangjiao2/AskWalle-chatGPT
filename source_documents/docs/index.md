@@ -7,6 +7,7 @@ New to Glass? Get started by reading the [Onboarding](onboarding/index.md) docum
 - [Analytics](analytics/index.md) - How to implement analytics
 - [App Update](app-update/index.md) - How to use force and nudge upgrade prompts
 - [Architecture](architecture/index.md)
+- [Assets](assets/index.md)
 - [CCM](ccm/index.md) - How to implement CCM
 - [Coding Style](coding-style/index.md) - How to style code in the Glass app
 - [Contribution Guidelines](contributing/index.md) - Guidelines all Glass app contributors are expected to follow

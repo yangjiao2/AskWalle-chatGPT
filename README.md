@@ -1,6 +1,8 @@
 # Ask Wally
 Ask questions to your Walmart Project's documentation without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest additional documents and ask questions even offline!
 
+This Proof-Of-Concept is currently designed for 0-shot queries, so it is not currently configured for chat-style interaction with Walmart Documentation. You ask a question, and the AI will do it's best to give you an accurate answer. Each question stands as a separate interaction.
+
 Built with [LangChain](https://github.com/hwchase17/langchain), [GPT4All](https://github.com/nomic-ai/gpt4all), [LlamaCpp](https://github.com/ggerganov/llama.cpp), [Chroma](https://www.trychroma.com/), [SentenceTransformers](https://www.sbert.net/) and [PrivateGPT](https://github.com/imartinez/privateGPT).
 
 <img width="902" alt="demo" src="assets/example.png">
@@ -23,8 +25,8 @@ Then, install the project requirements:
 pip3 install -r requirements.txt
 ```
 
-Next, download the LLM model and place it in a directory of your choice:
-- LLM: default to [wizardLM-7B.ggml.q4_0.bin](https://huggingface.co/TheBloke/wizardLM-7B-GGML/resolve/previous_llama_ggmlv2/wizardLM-7B.ggml.q4_0.bin). If you prefer a different LlamaCpp or GPT4All-J compatible model, just download it and reference it in your `.env` file.
+Next, download the LLM model and place it a directory called "models" in the project root:
+- LLM: default to [wizardLM-7B.ggml.q4_0.bin](https://huggingface.co/TheBloke/wizardLM-7B-GGML/resolve/previous_llama_ggmlv2/wizardLM-7B.ggml.q4_0.bin). If you prefer a different LlamaCpp or GPT4All-J compatible model, just download it and reference it in your `.env` file. (The "models" folder is setup by default. If you prefer to store it in a different folder, be sure to reference it in your `.env` file)
 
 Note: because of the way `langchain` loads the `SentenceTransformers` embeddings, the first time you run the script it will require internet connection to download the embeddings model itself.
 
@@ -38,7 +40,7 @@ from the project root to build the vectorstore.
 ## Instructions for ingesting your own dataset
 
 Delete everything in the ```db``` folder. (This will delete the vector datastore)
-Next, put any and all your files into the `source_documents` directory
+Next, put any and all of your files into the `source_documents` directory
 
 The supported extensions are:
 
@@ -138,6 +140,12 @@ If so set your archflags during pip install. eg: _ARCHFLAGS="-arch x86_64" pip3 
 
 # Disclaimer
 This is a test project to validate the feasibility of a fully private solution for querying Walmart Documentation and question answering using LLMs and Vector embeddings. It is not production ready, and it is not meant to be used in production.
+
+# Potential directions for further development
+The concepts explored in this project can be applied toward the following possibilities:
+1. The development of a more universal chat bot that can be integrated with Slack and Teams for easy interaction with our engineers.
+2. The creation of an API for use by other Coding Assistant AIs (or other services) to provide further context around a user's question.
+3. Increase the accuracy of other AI assistants by utilizing a vectorstore to provide additional context around user queries.
 
 # Opportunities for Improvement
 There are a couple areas we can focus on to improve the quality of the overall output:
