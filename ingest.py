@@ -18,6 +18,7 @@ from langchain.document_loaders import (
     UnstructuredODTLoader,
     UnstructuredPowerPointLoader,
     UnstructuredWordDocumentLoader,
+    ConfluenceLoader,
 )
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -36,6 +37,13 @@ source_directory = os.environ.get('SOURCE_DIRECTORY', 'source_documents')
 embeddings_model_name = os.environ.get('EMBEDDINGS_MODEL_NAME')
 chunk_size = 500
 chunk_overlap = 50
+
+# Confluence environment variables
+confluence_enabled = os.environ.get('CONFLUENCE_INTEGRATION_ENABLED')
+confluence_username = os.environ.get('CONFLUENCE_USERNAME')
+confluence_password = os.environ.get('CONFLUENCE_PASSWORD')
+confluence_space = os.environ.get('CONFLUENCE_SPACE')
+confluence_url = os.environ.get('CONFLUENCE_URL')
 
 
 # Custom document loaders
@@ -80,6 +88,12 @@ LOADER_MAPPING = {
     # Add more mappings for other file extensions and loaders as needed
 }
 
+
+def load_confluence() -> List[Document]:
+    loader = ConfluenceLoader(url=confluence_url, username=confluence_username, api_key=confluence_password)
+    return loader.load(
+        space_key=confluence_space, include_attachments=True
+    )
 
 def load_single_document(file_path: str) -> List[Document]:
     ext = "." + file_path.rsplit(".", 1)[-1]
@@ -154,12 +168,17 @@ def main():
         # Create and store locally vectorstore
         print("Creating new vectorstore")
         texts = process_documents()
+        # Check if Confluence integration is enabled
+        if confluence_enabled==True:
+            print(f"Confluence Enabled. Loading documents...")
+            texts = texts + load_confluence()
+        # Create embeddings
         print(f"Creating embeddings. May take some minutes...")
         db = Chroma.from_documents(texts, embeddings, persist_directory=persist_directory, client_settings=CHROMA_SETTINGS)
     db.persist()
     db = None
 
-    print(f"Ingestion complete! You can now run privateGPT.py to query your documents")
+    print(f"Ingestion complete! You can now run askWally.py to query your documents")
 
 
 if __name__ == "__main__":

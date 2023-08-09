@@ -25,14 +25,17 @@ from constants import CHROMA_SETTINGS
 
 # Prompt template definition
 template = """
-Use the following Evidence section and only that Evidence to answer the question at the end. Do not use your internal knowledge.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
+[INST]\n
+<<SYS>>\n
+Use the following Context section and only that Context to answer the question at the end. Do not use your internal knowledge.
+If you don't know the answer, just say that you don't know. Don't try to make up an answer.
+<</SYS>>\n\n
 
-Evidence:
+Context:
 {context}
 
 Question:
-{question}
+{question} [/INST]
 """
 
 def main():

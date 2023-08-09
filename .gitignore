@@ -2,7 +2,7 @@
 .DS_STORE
 
 # Source documents
-# source_documents/
+source_documents/
 
 # Models
 models/
@@ -133,7 +133,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-#.env
+.env
 .venv
 env/
 venv/

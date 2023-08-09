@@ -26,12 +26,38 @@ pip3 install -r requirements.txt
 ```
 
 Next, download the LLM model and place it a directory called "models" in the project root:
-- LLM: default to [wizardLM-7B.ggml.q4_0.bin](https://huggingface.co/TheBloke/wizardLM-7B-GGML/resolve/previous_llama_ggmlv2/wizardLM-7B.ggml.q4_0.bin). If you prefer a different LlamaCpp or GPT4All-J compatible model, just download it and reference it in your `.env` file. (The "models" folder is setup by default. If you prefer to store it in a different folder, be sure to reference it in your `.env` file)
+- LLM: default to [Llama2 7B](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/resolve/main/llama-2-7b-chat.ggmlv3.q4_K_M.bin). If you prefer a different LlamaCpp or GPT4All-J compatible model, just download it and reference it in your `.env` file. (The "models" folder is setup by default. If you prefer to store it in a different folder, be sure to reference it in your `.env` file)
+
+Copy the `example.env` template into `.env`
+```shell
+cp example.env .env
+```
+
+and edit the variables appropriately in the `.env` file.
+```
+# Vector DB Settings
+PERSIST_DIRECTORY: The folder you want your vectorstore in
+EMBEDDINGS_MODEL_NAME: SentenceTransformers embeddings model name (see https://www.sbert.net/docs/pretrained_models.html)
+TARGET_SOURCE_CHUNKS: The amount of chunks (sources) that will be used to answer a question
+
+# LLM Settings
+MODEL_TYPE: Supports LlamaCpp or GPT4All
+MODEL_PATH: Path to your GPT4All or LlamaCpp supported LLM
+MODEL_N_CTX: Maximum token limit for the LLM model
+MODEL_N_BATCH: Number of tokens in the prompt that are fed into the model at a time. Optimal value differs a lot depending on the model (8 works well for GPT4All, and 1024 is better for LlamaCpp)
+
+# Atlassian Confluence Settings
+CONFLUENCE_INTEGRATION_ENABLED: Enable or disable the Confluence integration
+CONFLUENCE_USERNAME: Your Confluence username
+CONFLUENCE_PASSWORD: Your Confluence password
+CONFLUENCE_SPACE: The Space Key for the Confluence Space that you want to download the documents from.
+CONFLUENCE_URL: URL of your Confluence instance.
+```
 
 Note: because of the way `langchain` loads the `SentenceTransformers` embeddings, the first time you run the script it will require internet connection to download the embeddings model itself.
 
 ## Test dataset
-This repo uses a subset of Walmart's Glass iOS documentaton along with the "#" and "A" sections in the [Walmart Organization acronyms document](https://confluence.walmart.com/display/PMO/GeC+Acronyms+and+Glossary#GeCAcronymsandGlossary-%23) for testing. To get started using the included dataset, just run;
+This repo comes with the "#" and "A" sections in the [Walmart Organization acronyms document](https://confluence.walmart.com/display/PMO/GeC+Acronyms+and+Glossary#GeCAcronymsandGlossary-%23) for testing. To get started using the included dataset, just run;
 ```shell
 python ingest.py
 ```
@@ -160,3 +186,10 @@ In regard to the LLM, here are a few ways we can improve it:
 In regard to the Vectorstore, we can improve the output of the LLM by ensuring the most relevant sections of the documentation are provided at querytime. Possible ways to improve this include:
 1. Modify the sentence transformer: Different sentence transformer embeddings can yield different results. This project uses the most accurate sentence transformer currently available, but innovations here could improve results as well.
 2. Use a different vector datastore: This project uses DuckDB along with Chroma for storing the information ingested from the source_documents folder into a form available to the LLM. Innovations here could improve output as well.
+
+# Change Log:
+**##Aug-09-2023:**
+1. Changed the default LLM from Wizard 7B to Llama2 7B. Much better answers with this model.
+2. Modified the prompt to conform to the Llama2 prompting template.
+3. Updated LlamaCpp to a version that supports newer GGMLv3 models.
+4. Started adding Confluence support. Still currently not working.
