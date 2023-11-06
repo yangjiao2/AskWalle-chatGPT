@@ -182,7 +182,7 @@ def main(confluence_enabled = False):
     db.persist()
     db = None
 
-    print(f"Ingestion complete! You can now run askWally.py to query your documents")
+    print(f"Ingestion complete! You can now run askWalle.py to query your documents")
 
 
 if __name__ == "__main__":

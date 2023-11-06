@@ -95,7 +95,7 @@ def main():
             print(document.page_content)
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='askWally: Ask questions to Confluence Documentation without an internet connection, '
+    parser = argparse.ArgumentParser(description='askWalle: Ask questions to Confluence Documentation without an internet connection, '
                                                  'using the power of LLMs.')
     parser.add_argument("--hide-source", "-S", action='store_true',
                         help='Use this flag to disable printing of source documents used for answers.')

@@ -1,7 +1,7 @@
 # Ask Me
-Ask questions to your Walmart Project's documentation without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest additional documents and ask questions even offline!
+Ask questions to your Confluence Project's documentation without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest additional documents and ask questions even offline!
 
-This Proof-Of-Concept is currently designed for 0-shot queries, so it is not currently configured for chat-style interaction with Walmart Documentation. You ask a question, and the AI will do it's best to give you an accurate answer. Each question stands as a separate interaction.
+This Proof-Of-Concept is currently designed for 0-shot queries, so it is not currently configured for chat-style interaction with Confluence Documentation. You ask a question, and the AI will do it's best to give you an accurate answer. Each question stands as a separate interaction.
 
 Built with [LangChain](https://github.com/hwchase17/langchain), [GPT4All](https://github.com/nomic-ai/gpt4all), [LlamaCpp](https://github.com/ggerganov/llama.cpp), [Chroma](https://www.trychroma.com/), [SentenceTransformers](https://www.sbert.net/) and [PrivateGPT](https://github.com/imartinez/privateGPT).
 
@@ -12,12 +12,12 @@ In order to set your environment up to run the code here, first install conda to
 [Instructions here.](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html)
 After install, create a new environment:
 ```shell
-conda create -n askWally python=3.11
+conda create -n askWalle python=3.11
 ```
 
 After creating the new environment, activate it by using the following command:
 ```shell
-conda activate askWally
+conda activate askWalle
 ```
 
 Then, install the project requirements:
@@ -57,7 +57,9 @@ CONFLUENCE_URL: URL of your Confluence instance.
 Note: because of the way `langchain` loads the `SentenceTransformers` embeddings, the first time you run the script it will require internet connection to download the embeddings model itself.
 
 ## Test dataset
-This repo comes with the "#" and "A" sections in the [Walmart Organization acronyms document](https://confluence.walmart.com/display/PMO/GeC+Acronyms+and+Glossary#GeCAcronymsandGlossary-%23) for testing. To get started using the included dataset, just run;
+Created a sample docs in /docs which can be used as a starting point for knowledge extraction for kubernetes related questions and solutions.
+
+
 ```shell
 python ingest.py
 ```
@@ -114,7 +116,7 @@ Note: during the ingest process no data leaves your local environment. You could
 In order to ask a question, run a command like:
 
 ```shell
-python askWally.py
+python askWalle.py
 ```
 
 And wait for the script to require your input.
@@ -131,14 +133,14 @@ Type `exit` to finish the script.
 
 
 ### CLI
-The script also supports optional command-line arguments to modify its behavior. You can see a full list of these arguments by running the command ```python askWally.py --help``` in your terminal.
+The script also supports optional command-line arguments to modify its behavior. You can see a full list of these arguments by running the command ```python askWalle.py --help``` in your terminal.
 
 
 # How does it work?
 Selecting the right local models and the power of `LangChain` you can run the entire pipeline locally, without any data leaving your environment, and with reasonable performance.
 
 - `ingest.py` uses `LangChain` tools to parse the document and create embeddings locally using `HuggingFaceEmbeddings` (`SentenceTransformers`). It then stores the result in a local vector database using `Chroma` vector store.
-- `askWally.py` uses a local LLM based on `GPT4All-J` or `LlamaCpp` to understand questions and create answers. The context for the answers is extracted from the local vector store using a similarity search to locate the right piece of context from the docs.
+- `askWalle.py` uses a local LLM based on `GPT4All-J` or `LlamaCpp` to understand questions and create answers. The context for the answers is extracted from the local vector store using a similarity search to locate the right piece of context from the docs.
 - `GPT4All-J` wrapper was introduced in LangChain 0.0.162.
 
 # System Requirements
@@ -165,7 +167,7 @@ When running a Mac with Intel hardware (not M1), you may run into _clang: error:
 If so set your archflags during pip install. eg: _ARCHFLAGS="-arch x86_64" pip3 install -r requirements.txt_
 
 # Disclaimer
-This is a test project to validate the feasibility of a fully private solution for querying Walmart Documentation and question answering using LLMs and Vector embeddings. It is not production ready, and it is not meant to be used in production.
+This is a test project to validate the feasibility of a fully private solution for querying Confluence Documentation and question answering using LLMs and Vector embeddings. It is not production ready, and it is not meant to be used in production.
 
 # Potential directions for further development
 The concepts explored in this project can be applied toward the following possibilities:
@@ -180,7 +182,7 @@ There are a couple areas we can focus on to improve the quality of the overall o
 
 In regard to the LLM, here are a few ways we can improve it:
 1. Run a "smarter" model: The current default is WizardLM-7B which is a 7 Billion parameter model. This one runs fairly quickly on standard hardware due to it's small size. Better results can be obtained by running a larger 13B (or even larger) model, however more compute and memory resources are required to run those.
-2. Fine-tune the model on Walmart specific data: LLMs have some knowledge embedded within it that comes from the source data it was originally trained on. Sometimes this intrinsic knowledge interferes with information inside Walmart's documentation. A good example of this is in regard to common acronyms and acronyms used in the Walmart Organization. Sometimes the LLM will use it's own internal knowledge, instead of the documentation references it is provided. Fine-tuning an LLM on Walmart Data will further reinforce the likelyhood of getting more accurate answers out of the LLM.
+2. Fine-tune the model on Confluence specific data: LLMs have some knowledge embedded within it that comes from the source data it was originally trained on. Sometimes this intrinsic knowledge interferes with information inside Confluence's documentation. A good example of this is in regard to common acronyms and acronyms used in the Confluence Organization. Sometimes the LLM will use it's own internal knowledge, instead of the documentation references it is provided. Fine-tuning an LLM on Confluence Data will further reinforce the likelyhood of getting more accurate answers out of the LLM.
 3. Improve the core prompt: Under the surface, this system uses a prompt wich combines the user's question with relevant sections from the reference documents. Tweaking this prompt may greatly improve the quality of the output.
 
 In regard to the Vectorstore, we can improve the output of the LLM by ensuring the most relevant sections of the documentation are provided at querytime. Possible ways to improve this include:
