@@ -1,7 +1,7 @@
 # Ask Wally
-Ask questions to your Walmart Project's documentation without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest additional documents and ask questions even offline!
+Ask questions to your Confluence Project's documentation without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest additional documents and ask questions even offline!
 
-This Proof-Of-Concept is currently designed for 0-shot queries, so it is not currently configured for chat-style interaction with Walmart Documentation. You ask a question, and the AI will do it's best to give you an accurate answer. Each question stands as a separate interaction.
+This Proof-Of-Concept is currently designed for 0-shot queries, so it is not currently configured for chat-style interaction with Confluence Documentation. You ask a question, and the AI will do it's best to give you an accurate answer. Each question stands as a separate interaction.
 
 Built with [LangChain](https://github.com/hwchase17/langchain), [GPT4All](https://github.com/nomic-ai/gpt4all), [LlamaCpp](https://github.com/ggerganov/llama.cpp), [Chroma](https://www.trychroma.com/), [SentenceTransformers](https://www.sbert.net/) and [PrivateGPT](https://github.com/imartinez/privateGPT).
 
@@ -57,7 +57,8 @@ CONFLUENCE_URL: URL of your Confluence instance.
 Note: because of the way `langchain` loads the `SentenceTransformers` embeddings, the first time you run the script it will require internet connection to download the embeddings model itself.
 
 ## Test dataset
-This repo comes with the "#" and "A" sections in the [Walmart Organization acronyms document](https://confluence.walmart.com/display/PMO/GeC+Acronyms+and+Glossary#GeCAcronymsandGlossary-%23) for testing. To get started using the included dataset, just run;
+This repo comes with docs which could be a good starting point for retriving Kubernetes related infomation.
+
 ```shell
 python ingest.py
 ```
@@ -165,7 +166,7 @@ When running a Mac with Intel hardware (not M1), you may run into _clang: error:
 If so set your archflags during pip install. eg: _ARCHFLAGS="-arch x86_64" pip3 install -r requirements.txt_
 
 # Disclaimer
-This is a test project to validate the feasibility of a fully private solution for querying Walmart Documentation and question answering using LLMs and Vector embeddings. It is not production ready, and it is not meant to be used in production.
+This is a test project to validate the feasibility of a fully private solution for querying Confluence Documentation and question answering using LLMs and Vector embeddings. It is not production ready, and it is not meant to be used in production.
 
 # Potential directions for further development
 The concepts explored in this project can be applied toward the following possibilities:
@@ -180,7 +181,7 @@ There are a couple areas we can focus on to improve the quality of the overall o
 
 In regard to the LLM, here are a few ways we can improve it:
 1. Run a "smarter" model: The current default is WizardLM-7B which is a 7 Billion parameter model. This one runs fairly quickly on standard hardware due to it's small size. Better results can be obtained by running a larger 13B (or even larger) model, however more compute and memory resources are required to run those.
-2. Fine-tune the model on Walmart specific data: LLMs have some knowledge embedded within it that comes from the source data it was originally trained on. Sometimes this intrinsic knowledge interferes with information inside Walmart's documentation. A good example of this is in regard to common acronyms and acronyms used in the Walmart Organization. Sometimes the LLM will use it's own internal knowledge, instead of the documentation references it is provided. Fine-tuning an LLM on Walmart Data will further reinforce the likelyhood of getting more accurate answers out of the LLM.
+2. Fine-tune the model on Confluence specific data: LLMs have some knowledge embedded within it that comes from the source data it was originally trained on. Sometimes this intrinsic knowledge interferes with information inside Confluence's documentation. A good example of this is in regard to common acronyms and acronyms used in the Confluence Organization. Sometimes the LLM will use it's own internal knowledge, instead of the documentation references it is provided. Fine-tuning an LLM on Confluence Data will further reinforce the likelyhood of getting more accurate answers out of the LLM.
 3. Improve the core prompt: Under the surface, this system uses a prompt wich combines the user's question with relevant sections from the reference documents. Tweaking this prompt may greatly improve the quality of the output.
 
 In regard to the Vectorstore, we can improve the output of the LLM by ensuring the most relevant sections of the documentation are provided at querytime. Possible ways to improve this include:
@@ -193,3 +194,6 @@ In regard to the Vectorstore, we can improve the output of the LLM by ensuring t
 2. Modified the prompt to conform to the Llama2 prompting template.
 3. Updated LlamaCpp to a version that supports newer GGMLv3 models.
 4. Started adding Confluence support. Still currently not working.
+
+
+

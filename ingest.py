@@ -152,7 +152,7 @@ def does_vectorstore_exist(persist_directory: str) -> bool:
                 return True
     return False
 
-def main():
+def main(confluence_enabled = False):
     # Create embeddings
     embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
 
@@ -167,12 +167,16 @@ def main():
     else:
         # Create and store locally vectorstore
         print("Creating new vectorstore")
-        texts = process_documents()
+        if source_directory != 'source_documents':
+            texts = process_documents()
+        else:
+            texts = ''
         # Check if Confluence integration is enabled
         if confluence_enabled==True:
             print(f"Confluence Enabled. Loading documents...")
             texts = texts + load_confluence()
         # Create embeddings
+        print ('texts', texts[:10])
         print(f"Creating embeddings. May take some minutes...")
         db = Chroma.from_documents(texts, embeddings, persist_directory=persist_directory, client_settings=CHROMA_SETTINGS)
     db.persist()

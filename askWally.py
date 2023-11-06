@@ -28,6 +28,10 @@ template = """
 [INST]\n
 <<SYS>>\n
 Use the following Context section and only that Context to answer the question at the end. Do not use your internal knowledge.
+if the answer is a code piece, wrap around this code blocks like:
+    ```
+    code block
+    ```
 If you don't know the answer, just say that you don't know. Don't try to make up an answer.
 <</SYS>>\n\n
 
@@ -36,6 +40,9 @@ Context:
 
 Question:
 {question} [/INST]
+
+Example:
+
 """
 
 def main():
@@ -47,12 +54,12 @@ def main():
     # activate/deactivate the streaming StdOut callback for LLMs
     callbacks = [] if args.mute_stream else [StreamingStdOutCallbackHandler()]
     # Prepare the LLM
-    match model_type:
-        case "LlamaCpp":
+    if model_type:
+        if model_type == "LlamaCpp":
             llm = LlamaCpp(model_path=model_path, n_ctx=model_n_ctx, n_batch=model_n_batch, callbacks=callbacks, verbose=False)
-        case "GPT4All":
+        elif model_type ==  "GPT4All":
             llm = GPT4All(model=model_path, n_ctx=model_n_ctx, backend='gptj', n_batch=model_n_batch, callbacks=callbacks, verbose=False)
-        case _default:
+        else:
             # raise exception if model_type is not supported
             raise Exception(f"Model type {model_type} is not supported. Please choose one of the following: LlamaCpp, GPT4All")
         
@@ -84,11 +91,11 @@ def main():
 
         # Print the relevant sources used for the answer
         for document in docs:
-            print("\n> " + document.metadata["source"] + ":")
+            print("\n> Source: " + document.metadata["source"] + ":")
             print(document.page_content)
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='askWally: Ask questions to Walmart Documentation without an internet connection, '
+    parser = argparse.ArgumentParser(description='askWally: Ask questions to Confluence Documentation without an internet connection, '
                                                  'using the power of LLMs.')
     parser.add_argument("--hide-source", "-S", action='store_true',
                         help='Use this flag to disable printing of source documents used for answers.')
