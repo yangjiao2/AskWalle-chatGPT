@@ -1,4 +1,4 @@
-# Ask Me
+# Ask Wall-e
 Ask questions to your Confluence Project's documentation without an internet connection, using the power of LLMs. 100% private, no data leaves your execution environment at any point. You can ingest additional documents and ask questions even offline!
 
 This Proof-Of-Concept is currently designed for 0-shot queries, so it is not currently configured for chat-style interaction with Confluence Documentation. You ask a question, and the AI will do it's best to give you an accurate answer. Each question stands as a separate interaction.
